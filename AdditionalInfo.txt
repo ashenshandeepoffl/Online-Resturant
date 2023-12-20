@@ -1,0 +1,7 @@
+
+#1
+<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> 
+is used in the action attribute of the form to ensure that 
+the form submits to the same PHP script (signup.php) that is rendering the form
+
+#2
