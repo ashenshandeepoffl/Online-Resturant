@@ -30,10 +30,44 @@
     }
     ?>
 
-    <!-- Your customer home page content goes here -->
+    <!-- Menu Section -->
+    <h3>Menu</h3>
+    <?php
+    // Fetch menu items from the database
+    // Database connection details
+    $servername = "localhost";
+    $username = "root";
+    $password = "As+s01galaxysa";
+    $dbname = "Resturent";
 
-    <p>Customer-specific content...</p>
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    <a href="/The Outer Clove restaurant/logout.php">Logout</a>
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $menu_query = "SELECT * FROM menu_items";
+    $menu_result = $conn->query($menu_query);
+
+    if ($menu_result->num_rows > 0) {
+        while ($menu_row = $menu_result->fetch_assoc()) {
+            echo "<div>";
+            // echo "<img src='{$menu_row['image_url']}' alt='{$menu_row['name']}'><br>";
+            echo "Name: {$menu_row['name']}<br>";
+            echo "Price: {$menu_row['price']}<br>";
+            echo "Description: {$menu_row['small_description']}<br>";
+            echo "<a href='menuDetails.php?menu_code={$menu_row['menu_code']}'>Show Details</a><br>";
+            echo "</div>";
+        }
+    } else {
+        echo "No menu items available.";
+    }
+    ?>
+
+    <a href="/Restaurant/logout.php">Logout</a>
+    <a href="orderHistory.php">viewCart</a>
+    <a href="orderSummary.php">Order Summery</a>
 </body>
 </html>
