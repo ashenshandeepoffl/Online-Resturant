@@ -1,19 +1,7 @@
 <?php
 session_start();
 
-// Database connection details
-$servername = "localhost";
-$username = "root";
-$password = "As+s01galaxysa";
-$dbname = "Resturent";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'dbConnection.php';
 
 // Process login form data when submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -37,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redirect based on user type
             switch ($_SESSION["user_type"]) {
                 case "admin":
-                    header("Location: Admin/adminHome.html");
+                    header("Location: Admin/adminHome.php");
                     break;
                 case "customers":
                     header("Location: Customer/customerHome.php");
                     break;
                 case "shopOwner":
-                    header("Location: Owner/ownerHome.html");
+                    header("Location: Owner/ownerHome.php");
                     break;
                 default:
                     // Handle other user types or roles
@@ -68,6 +56,11 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <script>
+        function preventBack(){window.history.forward()};
+            setTimeout("preventBack()",0);
+            window.onunload function(){null;}
+    </script>
 </head>
 <body>
     <h2>User Login</h2>

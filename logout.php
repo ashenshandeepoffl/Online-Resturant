@@ -5,6 +5,6 @@ $_SESSION = array();
 // Destroy the session
 session_destroy();
 // Redirect to the login page
-header("Location: /The Outer Clove restaurant/home.html");
+header("Location: /Restaurant/login.php");
 exit();
 ?>
