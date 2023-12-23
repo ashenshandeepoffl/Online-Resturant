@@ -51,6 +51,6 @@ $order_history_result = $conn->query($order_history_query);
     ?>
 
     <!-- Add a link to go back to the customer home page -->
-    <p><a href="customerHome.html">Go back to Customer Home</a></p>
+    <p><a href="customerHome.php">Go back to Customer Home</a></p>
 </body>
 </html>

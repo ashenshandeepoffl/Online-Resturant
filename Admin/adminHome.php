@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +27,12 @@
 <h1>View/Delete users</h1>
 <a href="view_users.php">Click Here</a>
 
+<h1>Facilities</h1>
+<a href="facilities.php">facilities</a>
+
+
+<h1>Promotions</h1>
+<a href="ManagePromotions.php">Promotions</a>
 
 <a href="/Restaurant/logout.php">Logout</a> <hr>
 </body>

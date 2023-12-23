@@ -107,5 +107,8 @@
     <a href="/Restaurant/logout.php">Logout</a> <hr>
     <a href="orderHistory.php">View All Ordered Itesms</a> <hr>
     <a href="orderSummary.php">Order Summery</a> <hr>
+    <a href="onlineReservation.php">Online Reservation</a> <hr>
+    <a href="view_reservation.php">View Reservation</a> <hr>
+    <a href="customer_facilities.php">customer_facilities</a> <hr>
 </body>
 </html>
