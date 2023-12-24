@@ -110,5 +110,6 @@
     <a href="onlineReservation.php">Online Reservation</a> <hr>
     <a href="view_reservation.php">View Reservation</a> <hr>
     <a href="customer_facilities.php">customer_facilities</a> <hr>
+    <a href="customerViewPromotions.php">Promotions</a> <hr>
 </body>
 </html>

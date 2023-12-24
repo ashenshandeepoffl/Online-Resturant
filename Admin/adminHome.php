@@ -30,9 +30,9 @@
 <h1>Facilities</h1>
 <a href="facilities.php">facilities</a>
 
-
 <h1>Promotions</h1>
 <a href="ManagePromotions.php">Promotions</a>
+<a href="adminCheckProOrders.php">Check Orders</a>
 
 <a href="/Restaurant/logout.php">Logout</a> <hr>
 </body>
