@@ -15,15 +15,14 @@ if (isset($_GET['menu_code'])) {
         $menu_row = $menu_result->fetch_assoc();
     } else {
         // Redirect to customerHome.html if menu not found
-        header("Location: customerHome.html");
+        header("Location: customerHome.php");
         exit();
     }
 } else {
     // Redirect to customerHome.html if menu_code is not provided
-    header("Location: customerHome.html");
+    header("Location: customerHome.php");
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +65,13 @@ if (isset($_GET['menu_code'])) {
         <input type="submit" value="Add Comment">
     </form>
 
-    
-
+    <!-- Place Order Form -->
+    <h3>Place Order</h3>
+    <form action="placeOrder.php" method="post">
+        <input type="hidden" name="menu_code" value="<?php echo $menu_code; ?>">
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" value="1" min="1" required><br>
+        <input type="submit" value="Place Order">
+    </form>
 </body>
 </html>
