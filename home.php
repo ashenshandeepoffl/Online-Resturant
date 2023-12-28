@@ -17,7 +17,7 @@ $result = mysqli_query($conn, $sql);
 <body>
     <div class="topnav">
         <a class="active" href="home.php">Home</a>
-        <a href="customerViewPromotions.php">Promotions</a>
+        <a href="promotions.php">Promotions</a>
         <a href="menu.php">Menu</a>
         <a href="aboutus.html">About</a>
         <a href="login.php">Login</a>

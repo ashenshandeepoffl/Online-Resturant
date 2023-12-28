@@ -33,6 +33,9 @@ if (isset($_GET['menu_code'])) {
     <title>Menu Details</title>
 </head>
 <body>
+
+    
+
     <h2>Menu Details</h2>
     <img src="/Restaurant/Admin/<?php echo $menu_row['image_url']; ?>" alt="<?php echo $menu_row['name']; ?>"><br>
     <strong>Name:</strong> <?php echo $menu_row['name']; ?><br>

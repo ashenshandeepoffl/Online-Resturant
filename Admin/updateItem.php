@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           WHERE menu_code = $menu_code";
 
     if ($conn->query($update_item_query) === TRUE) {
-        header("Location: adminHome.html");
+        header("Location: adminHome.php");
         exit();
     } else {
         echo "Error: " . $update_item_query . "<br>" . $conn->error;

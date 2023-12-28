@@ -25,12 +25,23 @@
             xmlhttp.open("GET", "liveSearch.php?searchInput=" + searchInput + "&priceFilter=" + priceFilter + "&categoryFilter=" + categoryFilter, true);
             xmlhttp.send();
         }
-
     </script>
     <title>Customer Home</title>
+    <!-- <link rel="stylesheet" href="menu.css"> -->
 </head>
 <body>
-    <h2>Welcome to Customer Home Page</h2>
+
+    <div class="topnav">
+        <a class="active" href="customerHome.php">Home</a>
+        <a href="customerViewPromotions.php">Promotions</a>
+        <a href="orderHistory.php">View All Ordered Itesms</a>
+        <a href="orderSummary.php">Order Summery</a>
+        <a href="onlineReservation.php">Online Reservation</a>
+        <a href="view_reservation.php">View Reservation</a>
+        <a href="customer_facilities.php">customer_facilities</a>
+        <a href="customerViewPromotions.php">Promotions</a>
+        <a href="/Restaurant/logout.php">Logout</a>
+    </div>
 
     <?php
     
@@ -104,12 +115,6 @@
     }
     ?>
 <hr>
-    <a href="/Restaurant/logout.php">Logout</a> <hr>
-    <a href="orderHistory.php">View All Ordered Itesms</a> <hr>
-    <a href="orderSummary.php">Order Summery</a> <hr>
-    <a href="onlineReservation.php">Online Reservation</a> <hr>
-    <a href="view_reservation.php">View Reservation</a> <hr>
-    <a href="customer_facilities.php">customer_facilities</a> <hr>
-    <a href="customerViewPromotions.php">Promotions</a> <hr>
+    
 </body>
 </html>

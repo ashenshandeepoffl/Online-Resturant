@@ -61,17 +61,50 @@ $conn->close();
             setTimeout("preventBack()",0);
             window.onunload function(){null;}
     </script>
+    
+    <link rel="stylesheet" href="forms.css">
 </head>
 <body>
-    <h2>User Login</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
+    <div class="topnav">
+        <a href="home.php">Home</a>
+        <a href="promotions.php">Promotions</a>
+        <a href="menu.php">Menu</a>
+        <a href="aboutus.html">About</a>
+        <a class="active" href="login.php">Login</a>
+    </div>
 
-        <input type="submit" value="Login">
-    </form>
+    <div class="container">
+        <div class="text">Login</div>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" name="username" required><br>
+                    <div class="underline"></div>
+                    <label for="username">Username</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="password" name="password" required autocomplete="off"><br>
+                    <div class="underline"></div>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+
+            <div class="form-row submit-btn">
+                <div class="input-data">
+                    <div class="inner"></div>
+                    <input type="submit" value="Login">
+                </div>
+            </div> 
+
+            <p>Don't have an account? <a href="signup.php">Sign in now</a></p>
+
+        </form>
+    </div>
 </body>
 </html>
+
