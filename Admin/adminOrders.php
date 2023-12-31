@@ -17,9 +17,22 @@ $admin_orders_result = $conn->query($admin_orders_query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Orders</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <h2>Admin Orders</h2>
+
+    <div class="topnav">
+        <a href="adminHome.php">Home</a>
+        <a href="menu.php">Menu</a>
+        <a href="viewReservation.php">Reservations</a>
+        <a class="active" href="adminOrders.php">Orders</a>
+        <a href="view_users.php">Users</a>
+        <a href="facilities.php">Outlets</a>
+        <a href="adminCheckProOrders.php">Promotions</a>
+        <a href="signup.php">New Admin</a>
+        <a href="/Restaurant/logout.php">Logout</a>
+    </div>
+    <h1>Admin Orders</h1>
     <?php
     if ($admin_orders_result->num_rows > 0) {
         while ($admin_order_row = $admin_orders_result->fetch_assoc()) {
@@ -33,7 +46,7 @@ $admin_orders_result = $conn->query($admin_orders_query);
             $order_details_result = $conn->query($order_details_query);
 
             if ($order_details_result->num_rows > 0) {
-                echo "<table border='1'>
+                echo "<table>
                         <tr>
                             <th>Menu Item</th>
                             <th>Quantity</th>
@@ -61,8 +74,5 @@ $admin_orders_result = $conn->query($admin_orders_query);
         echo "No pending orders.";
     }
     ?>
-
-    <!-- Add a link to go back to the admin home page -->
-    <p><a href="adminHome.html">Go back to Admin Home</a></p>
 </body>
 </html>

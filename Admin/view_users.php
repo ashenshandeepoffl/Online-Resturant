@@ -20,13 +20,26 @@
             background-color: #f2f2f2;
         }
     </style>
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <h2>Admin - View Users</h2>
+
+    <div class="topnav">
+        <a href="adminHome.php">Home</a>
+        <a href="menu.php">Menu</a>
+        <a href="viewReservation.php">Reservations</a>
+        <a href="adminOrders.php">Orders</a>
+        <a class="active" href="view_users.php">Users</a>
+        <a href="facilities.php">Outlets</a>
+        <a href="ManagePromotions.php">Promotions</a>
+        <a href="signup.php">New Admin</a>
+        <a href="/Restaurant/logout.php">Logout</a>
+    </div>
+    <h1>All Users</h1>
 
     <!-- Search Box -->
     <form action="" method="post">
-        <label for="search">Search by Username or Email:</label>
+        <label for="search">Search by Username or Email</label>
         <input type="text" name="search" id="search" placeholder="Enter username or email">
         <input type="submit" value="Search">
     </form>
@@ -52,7 +65,7 @@
             $result = $conn->query($all_users_query);
 
             if ($result->num_rows > 0) {
-                echo "<h3>All Users:</h3>";
+                echo "<h3>All Users</h3>";
                 displayUsersTable($result);}
         }
     } else {
@@ -61,7 +74,7 @@
         $result = $conn->query($all_users_query);
 
         if ($result->num_rows > 0) {
-            echo "<h3>All Users:</h3>";
+            echo "<h3>All Users</h3>";
             displayUsersTable($result);
         } else {
             echo "<p>No users found.</p>";

@@ -74,37 +74,23 @@ $conn->close();
         <a class="active" href="login.php">Login</a>
     </div>
 
-    <div class="container">
-        <div class="text">Login</div>
+    <h2>Coustomer Login</h2>
+
+    <div class="reservationForm"> 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="text" name="username" required><br>
-                    <div class="underline"></div>
-                    <label for="username">Username</label>
-                </div>
-            </div>
+            <input type="text" name="username" required><br>
+            <label for="username">Username</label>
 
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="password" name="password" required autocomplete="off"><br>
-                    <div class="underline"></div>
-                    <label for="password">Password</label>
-                </div>
-            </div>
+            <input type="password" name="password" required autocomplete="off"><br>
+            <label for="password">Password</label>
 
-            <div class="form-row submit-btn">
-                <div class="input-data">
-                    <div class="inner"></div>
-                    <input type="submit" value="Login">
-                </div>
-            </div> 
-
-            <p>Don't have an account? <a href="signup.php">Sign in now</a></p>
-
+            <input type="submit" value="Login">
+            <br> <br>
+            <p>Don't have an account? <a href="signup.php"><b>Sign in now</b></a></p>
         </form>
     </div>
+
 </body>
 </html>
 

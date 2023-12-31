@@ -15,11 +15,25 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
+    <div class="topnav">
+        <a href="adminHome.php">Home</a>
+        <a href="menu.php">Menu</a>
+        <a class="active" href="viewReservation.php">Reservations</a>
+        <a href="adminOrders.php">Orders</a>
+        <a href="view_users.php">Users</a>
+        <a href="facilities.php">Outlets</a>
+        <a href="adminCheckProOrders.php">Promotions</a>
+        <a href="signup.php">New Admin</a>
+        <a href="/Restaurant/logout.php">Logout</a>
+    </div>
+
     <h1>Admin Panel - Reservations</h1>
     
-    <table border="1">
+    <table>
         <tr>
             <th>ID</th>
             <th>First Name</th>
@@ -50,7 +64,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['reservation_time'] . "</td>";
                 echo "<td>" . $row['status'] . "</td>";
                 echo "<td>" . $row['comment'] . "</td>";
-                echo "<td><a href='edit_reservation.php?id=" . $row['id'] . "'>Edit</a> | <a href='approve_decline.php?id=" . $row['id'] . "&action=approve'>Approve</a> | <a href='approve_decline.php?id=" . $row['id'] . "&action=decline'>Decline</a></td>";
+                echo "<td><a href='edit_reservation.php?id=" . $row['id'] . "'>Edit</a></td>";
                 echo "</tr>";
             }
         } else {
@@ -59,5 +73,6 @@ $result = $conn->query($sql);
         ?>
 
     </table>
+    <!--  | <a href='approve_decline.php?id=" . $row['id'] . "&action=approve'>Approve</a> | <a href='approve_decline.php?id=" . $row['id'] . "&action=decline'>Decline</a> -->
 </body>
 </html>

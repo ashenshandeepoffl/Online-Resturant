@@ -23,6 +23,11 @@ $result = mysqli_query($conn, $sql);
         <a href="login.php">Login</a>
     </div>
 
+    <div class="landing">
+      <h2>The Outer Clove restaurant</h2>
+      <p>Quality Food from a quality kitchen</p>
+    </div>
+
      <!-- Slideshow container -->
     <div class="slideshow-container">
 
@@ -56,7 +61,7 @@ $result = mysqli_query($conn, $sql);
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div> 
-
+    
     <h1 class="topics">Our Services</h1>
 
     <div class="card-container">

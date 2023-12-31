@@ -79,7 +79,7 @@ if (isset($_GET['menu_code'])) {
     </div>
     <div class="card__footer">
         <div class="action">
-        <button type="button">Add to cart</button>
+        <button type="button"><a href="signup.php">Add to the cart</a></button>
         </div>
     </div>
     </div>

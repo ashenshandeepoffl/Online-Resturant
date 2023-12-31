@@ -35,47 +35,63 @@ if ($result->num_rows == 1) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Reservation</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
+    <div class="topnav">
+        <a href="adminHome.php">Home</a>
+        <a href="menu.php">Menu</a>
+        <a class="active" href="viewReservation.php">Reservations</a>
+        <a href="adminOrders.php">Orders</a>
+        <a href="view_users.php">Users</a>
+        <a href="facilities.php">Outlets</a>
+        <a href="ManagePromotions.php">Promotions</a>
+        <a href="signup.php">New Admin</a>
+        <a href="/Restaurant/logout.php">Logout</a>
+    </div>
     <h1>Edit Reservation</h1>
-    <form action="update_reservation.php" method="post">
-        <input type="hidden" name="reservation_id" value="<?php echo $reservation_id; ?>">
 
-        <label for="first_name">First Name:</label>
-        <input type="text" name="first_name" value="<?php echo $first_name; ?>" required><br>
+    <div class="menueDeatilsForm"> 
+        <form action="update_reservation.php" method="post">
+            <input type="hidden" name="reservation_id" value="<?php echo $reservation_id; ?>">
 
-        <label for="last_name">Last Name:</label>
-        <input type="text" name="last_name" value="<?php echo $last_name; ?>" required><br>
+            <input type="text" name="first_name" value="<?php echo $first_name; ?>" required><br>
+            <label for="first_name">First Name</label>
 
-        <label for="contact_number">Contact Number:</label>
-        <input type="text" name="contact_number" value="<?php echo $contact_number; ?>" required><br>
+            <input type="text" name="last_name" value="<?php echo $last_name; ?>" required><br>
+            <label for="last_name">Last Name</label>
 
-        <label for="email_address">Email Address:</label>
-        <input type="email" name="email_address" value="<?php echo $email_address; ?>" required><br>
+            <input type="text" name="contact_number" value="<?php echo $contact_number; ?>" required><br>
+            <label for="contact_number">Contact Number</label>
 
-        <label for="adults">Number of Adults:</label>
-        <input type="number" name="adults" value="<?php echo $adults; ?>" required><br>
+            <input type="email" name="email_address" value="<?php echo $email_address; ?>" required><br>
+            <label for="email_address">Email Address</label>
 
-        <label for="children">Number of Children:</label>
-        <input type="number" name="children" value="<?php echo $children; ?>" required><br>
+            <input type="number" name="adults" value="<?php echo $adults; ?>" required><br>
+            <label for="adults">Number of Adults</label>
 
-        <label for="reservation_date">Date:</label>
-        <input type="date" name="reservation_date" value="<?php echo $reservation_date; ?>" required><br>
+            <input type="number" name="children" value="<?php echo $children; ?>" required><br>
+            <label for="children">Number of Children</label>
 
-        <label for="reservation_time">Time:</label>
-        <input type="time" name="reservation_time" value="<?php echo $reservation_time; ?>" required><br>
+            <input type="date" name="reservation_date" value="<?php echo $reservation_date; ?>" required><br>
+            <label for="reservation_date">Date</label>
 
-        <label for="status">Status:</label>
-        <select name="status">
-            <option value="Pending" <?php echo ($status == 'Pending') ? 'selected' : ''; ?>>Pending</option>
-            <option value="Accepted" <?php echo ($status == 'Accepted') ? 'selected' : ''; ?>>Accepted</option>
-            <option value="Declined" <?php echo ($status == 'Declined') ? 'selected' : ''; ?>>Declined</option>
-        </select><br>
+            <input type="time" name="reservation_time" value="<?php echo $reservation_time; ?>" required>
+            <label for="reservation_time">Time</label> <br><br>
 
-        <label for="comment">Comment:</label>
-        <textarea name="comment"><?php echo $comment; ?></textarea><br>
+            <select name="status">
+                <option value="Pending" <?php echo ($status == 'Pending') ? 'selected' : ''; ?>>Pending</option>
+                <option value="Accepted" <?php echo ($status == 'Accepted') ? 'selected' : ''; ?>>Accepted</option>
+                <option value="Declined" <?php echo ($status == 'Declined') ? 'selected' : ''; ?>>Declined</option>
+            </select>
+            <label for="status">Status</label>
+           
 
-        <input type="submit" value="Update Reservation">
-    </form>
+            <input type="text" name="comment" value="<?php echo $comment; ?>"><br>
+            <label for="comment">Comment</label>
+
+            <input type="submit" value="Update Reservation">
+        </form>
+    </div>
 </body>
 </html>

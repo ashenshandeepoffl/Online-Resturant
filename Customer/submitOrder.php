@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->query($clear_order_history_query);
 
         // Redirect back to the customer order summary
-        header("Location: orderSummary.php");
+        header("Location: foodCart.php");
         exit();
     } else {
         echo "Error: " . $insert_order_query . "<br>" . $conn->error;

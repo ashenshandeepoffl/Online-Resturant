@@ -12,28 +12,90 @@
         };
     </script>
     <title>Admin Home</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-<h1>Add/Update/Delete Meanu iteam</h1> 
-<a href="meanuDetails.php">Click Here</a>
+    <div class="landing">
+      <h2>The Outer Clove Restaurant Admin Panel</h2>
+      <p>Quality Food from a quality kitchen</p>
+      <p>Scroll Down ↡</p>
+    </div>
 
-<h1>View/Update Online Reservations</h1>
-<a href="viewReservation.php">Click Here</a>
+<div class="container">
 
-<h1>View/Update Online Orders</h1>
-<a href="adminOrders.php">Click Here</a>
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">Menus</span>
+                <h1 class="dashbordCardTitle"><a href="menu.php">Click Here</a></h1>
+            </div>
+        </div>
+    </div>
 
-<h1>View/Delete users</h1>
-<a href="view_users.php">Click Here</a>
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">Reservations</span>
+                <h1 class="dashbordCardTitle"><a href="viewReservation.php">Click Here</a></h1>
+            </div>
+        </div>
+    </div>
 
-<h1>Facilities</h1>
-<a href="facilities.php">facilities</a>
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">Orders</span>
+                <h1 class="dashbordCardTitle"><a href="adminOrders.php">Click Here</a></h1>
+            </div>
+        </div>
+    </div>
 
-<h1>Promotions</h1>
-<a href="ManagePromotions.php">Promotions</a>
-<a href="adminCheckProOrders.php">Check Orders</a>
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">Users</span>
+                <h1 class="dashbordCardTitle"><a href="view_users.php">Click Here</a></h1>
+            </div>
+        </div>
+    </div>
 
-<a href="/Restaurant/logout.php">Logout</a> <hr>
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">Outlets</span>
+                <h1 class="dashbordCardTitle"><a href="facilities.php">Click Here</a></h1>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">Promotions</span>
+                <h1 class="dashbordCardTitle"><a href="ManagePromotions.php">Click Here</a></h1>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">New Admins</span>
+                <h1 class="dashbordCardTitle"><a href="signup.php">Click Here</a></h1>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="dashbordCard">
+            <div class="wrap">
+                <span class="dashbordCardCount">Logout</span>
+                <h1 class="dashbordCardTitle"><a href="/Restaurant/logout.php">Logout</a></h1>
+            </div>
+        </div>
+    </div>
+    
+</div>
 </body>
 </html>

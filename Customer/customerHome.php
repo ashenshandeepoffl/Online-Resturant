@@ -3,42 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        window.history.pushState(null, "", window.location.href);
-        window.onpopstate = function () {
-            window.history.pushState(null, "", window.location.href);
-        };
-
-        function liveSearch() {
-            var searchInput = document.getElementById("searchInput").value;
-            var priceFilter = document.getElementById("priceFilter").value;
-            var categoryFilter = document.getElementById("categoryFilter").value;
-
-            // Send AJAX request to server for live search
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("filteredMenuContainer").innerHTML = this.responseText;
-                }
-            };
-
-            xmlhttp.open("GET", "liveSearch.php?searchInput=" + searchInput + "&priceFilter=" + priceFilter + "&categoryFilter=" + categoryFilter, true);
-            xmlhttp.send();
-        }
-    </script>
     <title>Customer Home</title>
     <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
 </head>
 <body>
 
     <div class="topnav">
         <a class="active" href="customerHome.php">Home</a>
         <a href="promotions.php">Promotions</a>
-        <a href="orderHistory.php">View All Ordered Itesms</a>
-        <!-- <a href="orderSummary.php">Order Summery</a> -->
+        <a href="foodCart.php">Food Cart</a>
         <a href="onlineReservation.php">Online Reservation</a>
-        <a href="view_reservation.php">View Reservation</a>
-        <a href="customer_facilities.php">customer_facilities</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
 
@@ -47,39 +22,38 @@
     ?>
 
      <!-- Search Bar -->
-    <input class="searchBox" type="text" id="searchInput" onkeyup="liveSearch()" placeholder="Search for your favourite food">
 
-    <!-- Filter Options -->
-    <h3 class="topics" >Filter Options</h3>
+    <div class="cover">
+        <h1>Discover your favourite food</h1>
+        <form  class="flex-form">
+            <input type="search" id="searchInput" onkeyup="liveSearch()" placeholder="Search for your favourite food...">
+            <input type="submit" value="Search">
+        </form>
 
-    <div class="filter">
-        <label for="priceFilter">Price</label>
+        <div class="filter">
+            <label for="priceFilter">Price</label>
 
-        <select id="priceFilter" onchange="liveSearch()">
-            <option value="">All</option>
-            <option value="10">$10 and below</option>
-            <option value="20">$20 and below</option>
-            <option value="30">$30 and below</option>
-        </select>
+            <select id="priceFilter" onchange="liveSearch()">
+                <option value="">All</option>
+                <option value="10">$10 and below</option>
+                <option value="20">$20 and below</option>
+                <option value="30">$30 and below</option>
+            </select>
 
-        <label for="categoryFilter">Category</label>
+            <label for="categoryFilter">Category</label>
 
-        <select id="categoryFilter" onchange="liveSearch()">
-            <option value="">All</option>
-            <option value="Appetizer">Appetizer</option>
-            <option value="Main Course">Main Course</option>
-            <option value="Dessert">Dessert</option>
-        </select>
+            <select id="categoryFilter" onchange="liveSearch()">
+                <option value="">All</option>
+                <option value="Appetizer">Appetizer</option>
+                <option value="Main Course">Main Course</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+        </div>
     </div>
-    
-
-    <!-- Filtered Menu Section -->
-    <h3>Filtered Menu</h3>
 
     <div  class="filteredMenu"  id="filteredMenuContainer"></div>
 
     <!-- Menu Section -->
-    
     <h3>Menu</h3>
     <div class='card-container'>
         <?php

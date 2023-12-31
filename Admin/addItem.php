@@ -27,10 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if ($conn->query($add_item_query) === TRUE) {
-        header("Location: adminHome.php");
+        header("Location: menu.php");
         exit();
     } else {
         echo "Error: " . $add_item_query . "<br>" . $conn->error;
+        echo "<p><a href="adminHome.php">Home</a></p>"
     }
 }
 

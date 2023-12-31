@@ -32,7 +32,7 @@ $sql = "UPDATE reservations
         WHERE id = $reservation_id";
 
 if ($conn->query($sql) === TRUE) {
-    header('Location: viewReservation.php')
+    header('Location: viewReservation.php');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

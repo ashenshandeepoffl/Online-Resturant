@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
     $conn->query($delete_user_query);
 
     // Redirect back to the adminViewUsers.html page
-    header("Location: adminViewUsers.html");
+    header("Location: view_users.php");
     exit();
 }
 ?>

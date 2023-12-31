@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $delete_item_query = "DELETE FROM menu_items WHERE menu_code = $menu_code";
 
     if ($conn->query($delete_item_query) === TRUE) {
-        header("Location: adminHome.php");
+        header("Location: menu.php");
         exit();
     } else {
         echo "Error: " . $delete_item_query . "<br>" . $conn->error;

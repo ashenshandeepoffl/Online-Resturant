@@ -13,8 +13,6 @@
         <a href="promotions.php">Promotions</a>
         <a class="active" href="foodCart.php">Food Cart</a>
         <a href="onlineReservation.php">Online Reservation</a>
-        <a href="view_reservation.php">View Reservation</a>
-        <a href="customer_facilities.php">customer_facilities</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
     
@@ -46,62 +44,77 @@
 
     <h2>Order Summary</h2>
 
-    <?php
-    if ($order_summary_result->num_rows > 0) {
-        echo "<table border='1'>
-                <tr>
-                    <th>Menu Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>";
-        while ($order_summary_row = $order_summary_result->fetch_assoc()) {
-            echo "<tr>
-                    <td>{$order_summary_row['name']}</td>
-                    <td>{$order_summary_row['quantity']}</td>
-                    <td>{$order_summary_row['price']}</td>
-                </tr>";
-            $total_amount += $order_summary_row['quantity'] * $order_summary_row['price'];
-        }
-        echo "</table>";
+    <div class="cart">
+        <?php
+            if ($order_summary_result->num_rows > 0) {
+                echo "<table>
+                        <tr>
+                            <th>Menu Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>";
+                while ($order_summary_row = $order_summary_result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>{$order_summary_row['name']}</td>
+                            <td>{$order_summary_row['quantity']}</td>
+                            <td>{$order_summary_row['price']}</td>
+                        </tr>";
+                    $total_amount += $order_summary_row['quantity'] * $order_summary_row['price'];
+                }
+                echo "</table>";
 
-        echo "<p>Total Amount: $total_amount</p>";
+                echo "<p>Total Amount <br><b>$ $total_amount </b></p>";
 
-        // Button to submit the order to admin
-        echo "<form action='submitOrder.php' method='post'>
-                <input type='hidden' name='total_amount' value='$total_amount'>
-                <input type='submit' value='Submit Order to Admin'>
-              </form>";
-    } else {
-        echo "No orders placed yet.";
-    }
-    ?>
+                // Button to submit the order to admin
+                echo "<form action='submitOrder.php' method='post'>
+                        <input type='hidden' name='total_amount' value='$total_amount'>
+                        <button class='promotionAdd'>Confirm Your Order</button>
+                    </form>";
+            } else {
+                echo "<h3>No orders placed yet...</h3>";
+            }
+        ?>
+    </div>
+    
 
 
     <h2>Order History</h2>
-    
-    <?php
-    if ($order_history_result->num_rows > 0) {
-        while ($order_history_row = $order_history_result->fetch_assoc()) {
-            echo "<h3>Order ID: {$order_history_row['order_id']}</h3>";
-            echo "<p>Total Amount: {$order_history_row['total_amount']}</p>";
-            echo "<p>Status: {$order_history_row['status']}</p>";
-            
-            if (!empty($order_history_row['menu_items'])) {
-                $menu_items = explode(',', $order_history_row['menu_items']);
-                echo "<ul>";
-                foreach ($menu_items as $menu_item) {
-                    echo "<li>$menu_item</li>";
-                }
-                echo "</ul>";
-            } else {
-                echo "No items in this order.";
-            }
 
-            echo "<hr>"; // Separate each order
+    <?php
+        if ($order_history_result->num_rows > 0) {
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>Order ID</th>";
+            echo "<th>Total Amount</th>";
+            echo "<th>Status</th>";
+            echo "<th>Menu Items</th>";
+            echo "</tr>";
+
+            while ($order_history_row = $order_history_result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>{$order_history_row['order_id']}</td>";
+                echo "<td>{$order_history_row['total_amount']}</td>";
+                echo "<td>{$order_history_row['status']}</td>";
+                
+                echo "<td>";
+                if (!empty($order_history_row['menu_items'])) {
+                    $menu_items = explode(',', $order_history_row['menu_items']);
+                    echo "<ul>";
+                    foreach ($menu_items as $menu_item) {
+                        echo "<li>$menu_item</li>";
+                    }
+                    echo "</ul>";
+                } else {
+                    echo "No items in this order.";
+                }
+                echo "</td>";
+
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "No order history available.";
         }
-    } else {
-        echo "No order history available.";
-    }
     ?>
 </body>
 </html>

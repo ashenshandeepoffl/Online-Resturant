@@ -33,31 +33,46 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Restaurant Facilities</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
+
+    <div class="topnav">
+        <a href="adminHome.php">Home</a>
+        <a href="menu.php">Menu</a>
+        <a href="viewReservation.php">Reservations</a>
+        <a href="adminOrders.php">Orders</a>
+        <a href="view_users.php">Users</a>
+        <a class="active" href="facilities.php">Outlets</a>
+        <a href="adminCheckProOrders.php">Promotions</a>
+        <a href="signup.php">New Admin</a>
+        <a href="/Restaurant/logout.php">Logout</a>
+    </div>
+
     <h1>Admin - Restaurant Facilities</h1>
 
     <!-- Add New Facility Form -->
     <h2>Add New Facility</h2>
+    <div class="menueDeatilsForm"> 
     <form action="" method="post">
-        <label for="facility_name">Facility Name:</label>
         <input type="text" name="facility_name" required><br>
+        <label for="facility_name">Facility Name</label>
 
-        <label for="seating_capacity">Seating Capacity:</label>
         <input type="number" name="seating_capacity" required><br>
+        <label for="seating_capacity">Seating Capacity</label>
 
-        <label for="parking_available">Parking Available:</label>
         <input type="checkbox" name="parking_available"><br>
+        <label for="parking_available">Parking Available</label>
 
-        <label for="availability_status">Availability Status:</label>
         <input type="checkbox" name="availability_status"><br>
+        <label for="availability_status">Availability Status</label>
 
         <input type="submit" name="add" value="Add Facility">
     </form>
-
+</div>
     <!-- List of Facilities -->
     <h2>Facilities List</h2>
-    <table border="1">
+    <table>
         <tr>
             <th>ID</th>
             <th>Facility Name</th>

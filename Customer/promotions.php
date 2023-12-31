@@ -22,8 +22,6 @@ $result = $conn->query($all_promotions_query);
         <a class="active" href="promotions.php">Promotions</a>
         <a href="foodCart.php">Food Cart</a>
         <a href="onlineReservation.php">Online Reservation</a>
-        <a href="view_reservation.php">View Reservation</a>
-        <a href="customer_facilities.php">customer_facilities</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
     
@@ -40,11 +38,8 @@ $result = $conn->query($all_promotions_query);
                     echo "<img src='/Restaurant/Admin/{$row['image_url']}' alt='Promotion Image' style='width:100%'>";
                     echo '<div class="container">';
                         echo "<h3>{$row['promotion_name']}</h3>";
-                        echo "<p>Old Price:</p>" . "<p class='oldPrice'>$ {$row['old_price']}</p>";
-                        echo "<p>Promotional Price: <b> $ {$row['new_price']} <b></p>";
-                        echo '<div class="buttons">';
-                            echo "<a href='signup.php'><button class='add'>Place an Order</button></a>";
-                        echo '</div>';
+                        echo "<p>Old Price</p>" . "<p class='oldPrice'>$ {$row['old_price']}</p>";
+                        echo "<p>Promotional Price <b> $ {$row['new_price']} <b></p>";
                     echo "</div>";
                 echo "</div>";
             }
