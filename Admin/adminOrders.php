@@ -1,9 +1,6 @@
 <?php
-session_start();
-
 // Database connection details
 include 'dbConnection.php';
-
 
 // Fetch pending orders and their details for the admin
 $admin_orders_query = "SELECT * FROM admin_orders WHERE status = 'pending'";
@@ -32,6 +29,11 @@ $admin_orders_result = $conn->query($admin_orders_query);
         <a href="signup.php">New Admin</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
+
+    <?php
+        include 'welcomeName.php';
+    ?>
+
     <h1>Admin Orders</h1>
     <?php
     if ($admin_orders_result->num_rows > 0) {

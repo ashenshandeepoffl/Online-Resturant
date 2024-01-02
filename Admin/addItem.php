@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         echo "Error: " . $add_item_query . "<br>" . $conn->error;
-        echo "<p><a href="adminHome.php">Home</a></p>"
+        echo '<p><a href="adminHome.php">Home</a></p>';
     }
 }
 

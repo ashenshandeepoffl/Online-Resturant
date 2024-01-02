@@ -50,6 +50,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <link rel="stylesheet" href="forms.css">
+    <script src="validation.js"></script>
 </head>
 <body>
 
@@ -58,47 +59,48 @@ $conn->close();
         <a href="promotions.php">Promotions</a>
         <a href="menu.php">Menu</a>
         <a href="aboutus.html">About</a>
+        <a href="gallery.html">Gallery</a>
         <a class="active" href="login.php">Login</a>
     </div>
 
 
-    <h2>Coustomer Registartion Form</h2>
+    <h2>Registartion Form</h2>
 
     <div class="reservationForm"> 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form name ="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return validateForm()">
 
-            <input type="text" name="first_name" required> <br>
+            <input type="text" name="first_name"> <br>
             <label for="first_name">First Name</label>
 
-            <input type="text" name="last_name" required> <br>
+            <input type="text" name="last_name"  id="lName"> <br>
             <label for="last_name">Last Name</label>
 
-            <input type="email" name="email" required> <br>
+            <input type="email" name="email" > <br>
             <label for="email">Email Address</label>
 
-            <input type="text" name="username" required>
+            <input type="text" name="username" >
             <label for="username">Username</label>
 
-            <input type="text" name="address_no" placeholder="No" required> 
+            <input type="text" name="address_no" placeholder="No" > 
             <label for="address">Address No</label>
-            <input type="text" name="address_street" placeholder="Street" required>
+            <input type="text" name="address_street" placeholder="Street" >
             <label for="address">Address Stress</label>
-            <input type="text" name="address_city" placeholder="City" required> 
-            <label for="address">Address Cirt</label><br> 
+            <input type="text" name="address_city" placeholder="City" > 
+            <label for="address">Address City</label><br> 
 
-            <select name="gender" required>
+            <select name="gender" >
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
             <label for="gender">Gender</label>
            
-            <input type="date" name="dob" required> <br>
+            <input type="date" name="dob" > <br>
             <label for="dob">Date of Birth</label>
 
-            <input type="password" name="password" placeholder="" required> <br>
+            <input type="password" name="password" placeholder="" > <br>
             <label for="password">Password</label>
 
-            <input type="password" name="confirm_password" required> <br>
+            <input type="password" name="confirm_password" > <br>
             <label for="confirm_password">Confirm Password</label>
 
             <input type="submit" value="Register" class="register">

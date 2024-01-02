@@ -12,6 +12,7 @@
         <a class="active" href="promotions.php">Promotions</a>
         <a href="menu.php">Menu</a>
         <a href="aboutus.html">About</a>
+        <a href="gallery.html">Gallery</a>
         <a href="login.php">Login</a>
     </div>
 

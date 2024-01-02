@@ -44,19 +44,20 @@ $result = mysqli_query($conn, $sql);
         <a href="adminOrders.php">Orders</a>
         <a href="view_users.php">Users</a>
         <a class="active" href="facilities.php">Outlets</a>
-        <a href="adminCheckProOrders.php">Promotions</a>
+        <a href="ManagePromotions.php">Promotions</a>
         <a href="signup.php">New Admin</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
 
-    <h1>Admin - Restaurant Facilities</h1>
+    <?php
+        include 'welcomeName.php';
+    ?>
+    <h1>Restaurant Outlets</h1>
 
-    <!-- Add New Facility Form -->
-    <h2>Add New Facility</h2>
     <div class="menueDeatilsForm"> 
     <form action="" method="post">
         <input type="text" name="facility_name" required><br>
-        <label for="facility_name">Facility Name</label>
+        <label for="facility_name">Outlet Location</label>
 
         <input type="number" name="seating_capacity" required><br>
         <label for="seating_capacity">Seating Capacity</label>
@@ -71,7 +72,7 @@ $result = mysqli_query($conn, $sql);
     </form>
 </div>
     <!-- List of Facilities -->
-    <h2>Facilities List</h2>
+    <h1>Outlets List</h1>
     <table>
         <tr>
             <th>ID</th>

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include 'dbConnection.php';
 
@@ -34,6 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 </head>
 <body>
 
+
+
     <div class="topnav">    
         <a href="adminHome.php">Home</a>
         <a href="menu.php">Menu</a>
@@ -48,6 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 
     <h1>Edit <?php echo $edit_promotion_row['promotion_name']; ?></h1>
 
+    <div class="img-container">
+        <img class="img" src="<?php echo $edit_promotion_row['image_url']; ?>" alt="<?php echo $edit_promotion_row['promotion_name']; ?>">
+    </div>
+
+
     <div class="menueDeatilsForm">
         <form action="updatePromotion.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="promotion_id" value="<?php echo $edit_promotion_row['id']; ?>">
@@ -61,10 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
             <input type="number" name="new_price" step="0.01" value="<?php echo $edit_promotion_row['new_price']; ?>" required><br>
             <label for="new_price">New Price</label>
 
-            <input type="file" name="promotion_image" accept="image/*"><br>
+            <input type="file" name="promotion_image" accept="image/*" required class="btnImg" ><br>
             <label for="promotion_image">Promotion Image</label>
 
-            <input type="submit" value="Update Promotion">
+            <input type="submit" value="Update Promotion" class="btn">
         </form>
     </div>
 </body>

@@ -15,14 +15,14 @@
         <a href="adminOrders.php">Orders</a>
         <a href="view_users.php">Users</a>
         <a href="facilities.php">Outlets</a>
-        <a href="adminCheckProOrders.php">Promotions</a>
+        <a href="ManagePromotions.php">Promotions</a>
         <a href="signup.php">New Admin</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
 
     <?php
-        session_start();
 
+        include 'welcomeName.php';
         // Database connection details
         include 'dbConnection.php';
 
@@ -53,7 +53,9 @@
 <h1>Edit <?php echo $row['name']; ?></h1>
 
 
-<img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['name']; ?>">
+<div class="img-container">
+    <img class="img" src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['name']; ?>">
+</div>
 
 
 <div class="menueDeatilsForm"> 
@@ -66,17 +68,8 @@
         <input type="number" name="item_price" step="0.01" value="<?php echo $row['price']; ?>" required><br>
         <label for="item_price">Price</label>
 
-        <!-- <h3>Upload Image</h3>
-        <div class="drop_box">
-            <header>
-                <h4>Select File here</h4>
-            </header>
-            <p>Files Supported: PNG, JPG</p>
-            <input type="file" hidden name="item_image" accept="image/*" required style="display:none;"><br>
-            <button class="btn">Choose File</button>
-        </div> <br> -->
 
-        <input type="file" name="item_image" accept="image/*" required ><br>
+        <input type="file" name="item_image" accept="image/*" required class="btnImg"  ><br>
         <label for="item_image">Upload a Image</label>
 
         <input type="text" name="item_small_desc" step="0.01" value="<?php echo $row['small_description']; ?>" required>
@@ -88,14 +81,17 @@
         <input type="text" name="item_categories" value="<?php echo $row['categories']; ?>" required><br>
         <label for="item_categories">Categories</label>
 
-        <input type="submit" value="Update Item"> <br>
-        
+        <input type="submit" value="Update Item" class="btnImg" > <br>
         <form action="deleteItem.php" method="post">
             <input type="hidden" name="menu_code" value="<?php echo $row['menu_code']; ?>">
-            <input type="submit" value="Delete Item">
+            <input type="submit" value="Delete Item" class="btnImg">
         </form>
+        
+        
     </form>
 </div>
+
+
 
 </body>
 </html>

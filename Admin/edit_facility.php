@@ -1,4 +1,5 @@
 <?php
+include 'welcomeName.php';
 include 'dbconnection.php';
 
 // Handle the form submission for editing facility

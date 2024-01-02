@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Registration successful, redirect to login page
-        header("Location: login.php");
+        header("Location: adminHome.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -63,6 +63,10 @@ $conn->close();
         <a class="active" href="signup.php">New Admins</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
+
+    <?php
+        include 'welcomeName.php';
+    ?>
 
     <h1>New Admin Form</h1>
 

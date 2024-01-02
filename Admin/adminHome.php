@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php
+    include 'welcomeName.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,10 +18,12 @@
 </head>
 <body>
 
-    <div class="landing">
-      <h2>The Outer Clove Restaurant Admin Panel</h2>
-      <p>Quality Food from a quality kitchen</p>
-      <p>Scroll Down ↡</p>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>The Outer Clove Restaurant Admin Panel</h1>
+            <p>Quality Food from a quality kitchen</p>
+            <p>Scroll Down ↡</p>
+        </div>
     </div>
 
 <div class="container">

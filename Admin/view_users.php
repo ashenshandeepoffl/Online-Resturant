@@ -35,6 +35,11 @@
         <a href="signup.php">New Admin</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
+
+    <?php
+        include 'welcomeName.php';
+    ?>
+
     <h1>All Users</h1>
 
     <!-- Search Box -->

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Delius+Unicase:wght@400;700&family=Pacifico&family=Yellowtail&display=swap');
 
 * {
-    box-sizing:border-box
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -14,6 +16,7 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #EDF6F9;
+  border-radius: 10px;  
 }
 
 .topnav a {
@@ -35,19 +38,35 @@ body {
   color: white;
 }
 
-.landing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* This ensures that the container takes up the full height of the viewport */
-  background-color: white;
+.hero-image {
+  margin-top: 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+  url("/Restaurant/Images/background.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 10px;
 }
 
-.landing h2, .landing p {
+.hero-text {
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
+.hero-text h1 {
+  font-size: 75px;
+}
+
+.words {
+  text-align: center;
+  padding: 10px;
+}
 
 /* Slideshow */
 
@@ -59,6 +78,7 @@ body {
 
 .mySlides {
   display: none;
+  border-radius: 10px;
 }
 
 .prev, .next {
@@ -213,4 +233,8 @@ body {
 .card-signup a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.error {
+  color: red;
 }

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Database connection details
 include 'dbConnection.php';
@@ -30,6 +29,10 @@ $result = $conn->query($sql);
         <a href="signup.php">New Admin</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
+
+    <?php
+        include 'welcomeName.php';
+    ?>
 
     <h1>Admin Panel - Reservations</h1>
     

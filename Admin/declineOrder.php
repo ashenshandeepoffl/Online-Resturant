@@ -11,11 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
     $conn->query($decline_order_query);
 
     // Redirect back to the adminCheckOrders.html page
-    header("Location: adminCheckOrders.php");
+    header("Location: ManagePromotions.php");
     exit();
 } else {
     // Redirect to adminCheckOrders.html if order ID is not provided
-    header("Location: adminCheckOrders.php");
+    header("Location: ManagePromotions.php");
     exit();
 }
 ?>

@@ -14,6 +14,8 @@
         <a href="promotions.php">Promotions</a>
         <a href="foodCart.php">Food Cart</a>
         <a href="onlineReservation.php">Online Reservation</a>
+        <a href="aboutus.html">About</a>
+        <a href="/Restaurant/gallery.html">Gallery</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
 
@@ -52,6 +54,15 @@
     </div>
 
     <div  class="filteredMenu"  id="filteredMenuContainer"></div>
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>The Outer Clove restaurant</h1>
+            <p class="hero-textP" >Quality Food from a Quality Kitchen</p>
+        </div>
+    </div>
+
+    <h2 class="words"> "Unparalleled dining experience, top-rated by authorities" </h2>
 
     <!-- Menu Section -->
     <h3>Menu</h3>

@@ -20,6 +20,10 @@
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
 
+    <?php
+        include 'welcomeName.php';
+    ?>
+
     <h1>Add New Promotions</h1>
 
     <div class="menueDeatilsForm">
@@ -34,10 +38,10 @@
             <input type="number" name="new_price" step="0.01" required><br>
             <label for="new_price">New Price</label>
 
-            <input type="file" name="promotion_image" accept="image/*" required><br>
+            <input type="file" name="promotion_image" accept="image/*" required class="btnImg"><br>
             <label for="promotion_image">Promotion Image</label>
 
-            <input type="submit" value="Add Promotion">
+            <input type="submit" value="Add Promotion" class="btn">
         </form>
     </div>
 

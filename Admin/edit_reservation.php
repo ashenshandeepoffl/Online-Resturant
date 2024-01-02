@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'welcomeName.php';
 
 // Database connection details
 include 'dbConnection.php';

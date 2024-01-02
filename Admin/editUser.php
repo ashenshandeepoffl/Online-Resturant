@@ -1,5 +1,5 @@
 <?php
-// Include database connection
+session_start();
 include 'dbConnection.php';
 
 if (isset($_GET['id'])) {

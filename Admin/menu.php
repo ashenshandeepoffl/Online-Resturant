@@ -15,10 +15,14 @@
         <a href="adminOrders.php">Orders</a>
         <a href="view_users.php">Users</a>
         <a href="facilities.php">Outlets</a>
-        <a href="adminCheckProOrders.php">Promotions</a>
+        <a href="ManagePromotions.php">Promotions</a>
         <a href="signup.php">New Admin</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
+
+    <?php
+        include 'welcomeName.php';
+    ?>
     
     <h1>Add Menu Items</h1>
 
@@ -29,25 +33,13 @@
             
             <input type="number" name="item_price" step="0.01" required><br>
             <label for="item_price">Price</label>
-
-   
-            <!-- <h3>Upload Image</h3>
-            <div class="drop_box">
-                <header>
-                    <h4>Select File here</h4>
-                </header>
-                <p>Files Supported: PNG, JPG</p>
-                <input type="file" hidden name="item_image" accept="image/*" required style="display:none;"><br>
-    
-            </div> <br> -->
-
-            <input type="file" name="item_image" accept="image/*" required ><br>
+            
+            <input type="file" name="item_image" accept="image/*" required class="btnImg" ><br>
             <label for="item_image">Upload a Image</label>
 
             <input name="item_small_desc" rows="1" required></input><br>
-            <label for="item_small_desc">Small Description</label>
-
-            <input name="item_long_desc" rows="1" required></input><br>
+            <label for="item_small_desc">Small & long Description</label>
+            <textarea name="item_long_desc" rows="3" required></textarea><br><br>
 
             <input type="text" name="item_categories" required><br>
             <label for="item_categories">Categories</label>
@@ -61,8 +53,6 @@
     <!-- List Existing Items -->
     <h1>Existing Food Items</h1>
     <?php
-
-    session_start();
 
     // Database connection details
     include 'dbConnection.php';

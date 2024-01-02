@@ -20,6 +20,7 @@ $menu_result = $conn->query($menu_query);
         <a href="promotions.php">Promotions</a>
         <a class="active" href="menu.php">Menu</a>
         <a href="aboutus.html">About</a>
+        <a href="gallery.html">Gallery</a>
         <a href="login.php">Login</a>
     </div>
 
