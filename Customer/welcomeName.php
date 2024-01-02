@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Back</title>
-    <style>
+    <!-- <style>
         p {
             text-align: center;
             padding: 20px;
             background-color: #f2f2f2;
             border-radius: 10px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <?php

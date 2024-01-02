@@ -58,7 +58,7 @@
     <div class="hero-image">
         <div class="hero-text">
             <h1>The Outer Clove restaurant</h1>
-            <p class="hero-textP" >Quality Food from a Quality Kitchen</p>
+            <p class="hero-textP">Quality Food from a Quality Kitchen</p>
         </div>
     </div>
 

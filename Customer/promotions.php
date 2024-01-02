@@ -30,7 +30,7 @@ $result = $conn->query($all_promotions_query);
     ?>
 
     <h2>Promotions</h2>
-
+    <div class='card-container'>
     <?php
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -47,7 +47,7 @@ $result = $conn->query($all_promotions_query);
             echo "<p>No promotions found.</p>";
         }
     ?>
-
+    </div>
     <!-- Place Online Order Form -->
     <h3>Place Online Order</h3>
 
