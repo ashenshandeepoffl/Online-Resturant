@@ -1,0 +1,115 @@
+-- Create a database named 'Resturent'
+CREATE DATABASE Resturent;
+
+-- Drop the 'Resturent' database (Use with caution, as it deletes the database)
+DROP DATABASE Resturent;
+
+-- Switch to the 'Resturent' database
+USE Resturent;
+
+-- Create a 'users' table to store user information
+CREATE TABLE users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    username VARCHAR(50) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    dob DATE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    user_type VARCHAR(20)
+);
+
+-- Create a 'menu_items' table to store menu item details
+CREATE TABLE menu_items (
+    menu_code INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    image_url VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    small_description TEXT,
+    long_description TEXT,
+    categories VARCHAR(255) NOT NULL
+);
+
+-- Create a 'comments' table to store user comments on menu items
+CREATE TABLE comments (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    menu_code INT(6) UNSIGNED,
+    username VARCHAR(50) NOT NULL,
+    comment TEXT NOT NULL,
+    FOREIGN KEY (menu_code) REFERENCES menu_items(menu_code)
+);
+
+-- Create an 'orders' table to store customer orders
+CREATE TABLE orders (
+    order_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    menu_code INT(6) UNSIGNED,
+    username VARCHAR(50) NOT NULL,
+    quantity INT(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (menu_code) REFERENCES menu_items(menu_code)
+);
+
+-- Add a new column 'approved' to the 'orders' table with a default value of NULL
+ALTER TABLE orders ADD COLUMN approved BOOLEAN DEFAULT NULL;
+
+-- Create an 'admin_orders' table to store admin-approved orders
+CREATE TABLE admin_orders (
+    order_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    status VARCHAR(20) NOT NULL
+);
+
+-- Create an 'order_details' table to store details of admin-approved orders
+CREATE TABLE order_details (
+    order_detail_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    order_id INT(6) UNSIGNED,
+    menu_item_name VARCHAR(100) NOT NULL,
+    quantity INT(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES admin_orders(order_id)
+);
+
+-- Create a 'reservations' table to store restaurant reservations
+CREATE TABLE reservations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    contact_number VARCHAR(15),
+    email_address VARCHAR(100),
+    adults INT,
+    children INT,
+    reservation_date DATE,
+    reservation_time TIME,
+    status VARCHAR(20),
+    comment TEXT
+);
+
+-- Create a 'restaurant_facilities' table to store information about restaurant facilities
+CREATE TABLE restaurant_facilities (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    facility_name VARCHAR(50) NOT NULL,
+    seating_capacity INT,
+    parking_available BOOLEAN,
+    availability_status BOOLEAN
+);
+
+-- Create a 'promotions' table to store promotional offers
+CREATE TABLE promotions (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    promotion_name VARCHAR(255) NOT NULL,
+    old_price DECIMAL(10, 2) NOT NULL,
+    new_price DECIMAL(10, 2) NOT NULL,
+    image_url VARCHAR(255) NOT NULL
+);
+
+-- Create a 'promotion_orders' table to store orders for promotional offers
+CREATE TABLE promotion_orders (
+    order_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT(6) UNSIGNED NOT NULL,
+    promotion_id INT(6) UNSIGNED NOT NULL,
+    order_status ENUM('Pending', 'Accepted', 'Declined') DEFAULT 'Pending',
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES users(id),
+    FOREIGN KEY (promotion_id) REFERENCES promotions(id)
+);
