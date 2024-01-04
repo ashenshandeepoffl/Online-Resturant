@@ -54,7 +54,7 @@
             <input type="time" name="reservation_time" required><br>
             <label for="reservation_time">Time</label>
 
-            <button>Confirm Your Reservation</button>
+            <button onclick="validateForm()">Confirm Your Reservation</button>
         </form>
     </div>
     
@@ -98,5 +98,61 @@
 
     </table>
     
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById('first_name').value;
+            var lastName = document.getElementById('last_name').value;
+            var contactNumber = document.getElementById('contact_number').value;
+            var emailAddress = document.getElementById('email_address').value;
+            var adults = document.getElementById('adults').value;
+            var children = document.getElementById('children').value;
+            var reservationDate = document.getElementById('reservation_date').value;
+            var reservationTime = document.getElementById('reservation_time').value;
+
+            if (firstName === "") {
+                alert("Please enter your First Name");
+                return false;
+            }
+
+            if (lastName === "") {
+                alert("Please enter your Last Name");
+                return false;
+            }
+
+            if (contactNumber === "") {
+                alert("Please enter your Contact Number");
+                return false;
+            }
+
+            if (emailAddress === "") {
+                alert("Please enter your Email Address");
+                return false;
+            }
+
+            if (adults === "" || isNaN(adults) || adults <= 0) {
+                alert("Please enter a valid number of Adults");
+                return false;
+            }
+
+            if (children === "" || isNaN(children) || children < 0) {
+                alert("Please enter a valid number of Children");
+                return false;
+            }
+
+            if (reservationDate === "") {
+                alert("Please enter the Reservation Date");
+                return false;
+            }
+
+            if (reservationTime === "") {
+                alert("Please enter the Reservation Time");
+                return false;
+            }
+
+            // If all validations pass, submit the form
+            document.getElementById('reservationForm').submit();
+        }
+    </script>
+
 </body>
 </html>

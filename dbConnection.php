@@ -3,7 +3,7 @@
 // Database connection details
 $servername = "localhost";
 $username = "root";
-$password = "As+s01galaxysa";
+$password = "";
 $dbname = "Resturent";
 
 // Create connection

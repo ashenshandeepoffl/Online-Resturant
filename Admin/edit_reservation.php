@@ -52,7 +52,7 @@ if ($result->num_rows == 1) {
     <h1>Edit Reservation</h1>
 
     <div class="menueDeatilsForm"> 
-        <form action="update_reservation.php" method="post">
+        <form action="update_reservation.php" method="post" onsubmit="return validateForm()">
             <input type="hidden" name="reservation_id" value="<?php echo $reservation_id; ?>">
 
             <input type="text" name="first_name" value="<?php echo $first_name; ?>" required><br>
@@ -93,5 +93,30 @@ if ($result->num_rows == 1) {
             <input type="submit" value="Update Reservation">
         </form>
     </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.forms["reservationForm"]["first_name"].value;
+            var lastName = document.forms["reservationForm"]["last_name"].value;
+            var contactNumber = document.forms["reservationForm"]["contact_number"].value;
+            var emailAddress = document.forms["reservationForm"]["email_address"].value;
+            var adults = document.forms["reservationForm"]["adults"].value;
+            var children = document.forms["reservationForm"]["children"].value;
+            var reservationDate = document.forms["reservationForm"]["reservation_date"].value;
+            var reservationTime = document.forms["reservationForm"]["reservation_time"].value;
+
+            // Add more validation checks as needed
+
+            if (firstName === "" || lastName === "" || contactNumber === "" || emailAddress === "" || adults === "" || children === "" || reservationDate === "" || reservationTime === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            // Add more specific validation checks if necessary
+
+            return true;
+        }
+    </script>
+
 </body>
 </html>

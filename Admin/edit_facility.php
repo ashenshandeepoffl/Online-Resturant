@@ -70,23 +70,40 @@ if (isset($_GET['id'])) {
     </div>
     <h1>Edit Facility</h1>
     <div class="menueDeatilsForm"> 
-    <form action="" method="post">
-        <input type="hidden" name="facility_id" value="<?php echo $facility_id; ?>">
+        <form action="" method="post" onsubmit="return validateForm()">
+            <input type="hidden" name="facility_id" value="<?php echo $facility_id; ?>">
 
-        <input type="text" name="facility_name" value="<?php echo $facility_name; ?>" required><br>
-        <label for="facility_name">Facility Name</label>
+            <input type="text" name="facility_name" value="<?php echo $facility_name; ?>" required><br>
+            <label for="facility_name">Facility Name</label>
 
-        <input type="number" name="seating_capacity" value="<?php echo $seating_capacity; ?>" required><br>
-        <label for="seating_capacity">Seating Capacity</label>
+            <input type="number" name="seating_capacity" value="<?php echo $seating_capacity; ?>" required><br>
+            <label for="seating_capacity">Seating Capacity</label>
 
-        <input type="checkbox" name="parking_available" <?php echo ($parking_available == 1) ? 'checked' : ''; ?>><br>
-        <label for="parking_available">Parking Available</label>
+            <input type="checkbox" name="parking_available" <?php echo ($parking_available == 1) ? 'checked' : ''; ?>><br>
+            <label for="parking_available">Parking Available</label>
 
-        <input type="checkbox" name="availability_status" <?php echo ($availability_status == 1) ? 'checked' : ''; ?>><br>
-        <label for="availability_status">Availability Status</label>
+            <input type="checkbox" name="availability_status" <?php echo ($availability_status == 1) ? 'checked' : ''; ?>><br>
+            <label for="availability_status">Availability Status</label>
 
-        <input type="submit" value="Save Changes">
-    </form>
-</div>
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Perform your validation here
+            let facilityName = document.getElementById("facility_name").value;
+            let seatingCapacity = document.getElementById("seating_capacity").value;
+
+            // Example validation: Check if the facility name and seating capacity are not empty
+            if (facilityName.trim() === "" || seatingCapacity.trim() === "") {
+                alert("Please fill in all required fields.");
+                return false; 
+            }
+
+
+            return true; // Allow form submission
+        }
+    </script>
 </body>
 </html>

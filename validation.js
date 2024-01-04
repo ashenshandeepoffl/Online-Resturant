@@ -65,4 +65,10 @@ function validateForm() {
         alert("Please confirm your Password.");
         return false;
     }
+
+    // Check if password and confirm password match
+    if (password !== confirm_password) {
+        alert("Password and Confirm Password do not match.");
+        return false;
+    }
 }

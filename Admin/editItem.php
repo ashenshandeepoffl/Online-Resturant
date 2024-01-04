@@ -59,7 +59,7 @@
 
 
 <div class="menueDeatilsForm"> 
-    <form action="updateItem.php" method="post" enctype="multipart/form-data">
+    <form action="updateItem.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
         <input type="hidden" name="menu_code" value="<?php echo $row['menu_code']; ?>">
 
         <input type="text" name="item_name" value="<?php echo $row['name']; ?>" required><br>
@@ -86,12 +86,49 @@
             <input type="hidden" name="menu_code" value="<?php echo $row['menu_code']; ?>">
             <input type="submit" value="Delete Item" class="btnImg">
         </form>
-        
-        
     </form>
 </div>
 
+    <script>
+        function validateForm() {
+            var itemName = document.forms["updateForm"]["item_name"].value;
+            var itemPrice = document.forms["updateForm"]["item_price"].value;
+            var itemImage = document.forms["updateForm"]["item_image"].value;
+            var itemSmallDesc = document.forms["updateForm"]["item_small_desc"].value;
+            var itemLongDesc = document.forms["updateForm"]["item_long_desc"].value;
+            var itemCategories = document.forms["updateForm"]["item_categories"].value;
 
+            if (itemName == "") {
+            alert("Name must be filled out");
+            return false;
+            }
+
+            if (itemPrice == "" || isNaN(itemPrice)) {
+            alert("Price must be a number");
+            return false;
+            }
+
+            if (itemImage == "") {
+            alert("Image must be selected");
+            return false;
+            }
+
+            if (itemSmallDesc == "") {
+            alert("Small description must be filled out");
+            return false;
+            }
+
+            if (itemLongDesc == "") {
+            alert("Long description must be filled out");
+            return false;
+            }
+
+            if (itemCategories == "") {
+            alert("Categories must be filled out");
+            return false;
+            }
+        }
+    </script>
 
 </body>
 </html>

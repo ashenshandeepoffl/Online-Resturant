@@ -55,22 +55,22 @@ $result = mysqli_query($conn, $sql);
     <h1>Restaurant Outlets</h1>
 
     <div class="menueDeatilsForm"> 
-    <form action="" method="post">
-        <input type="text" name="facility_name" required><br>
-        <label for="facility_name">Outlet Location</label>
+        <form action="" method="post" onsubmit="return validateForm()">
+            <input type="text" name="facility_name" required><br>
+            <label for="facility_name">Outlet Location</label>
 
-        <input type="number" name="seating_capacity" required><br>
-        <label for="seating_capacity">Seating Capacity</label>
+            <input type="number" name="seating_capacity" required><br>
+            <label for="seating_capacity">Seating Capacity</label>
 
-        <input type="checkbox" name="parking_available"><br>
-        <label for="parking_available">Parking Available</label>
+            <input type="checkbox" name="parking_available"><br>
+            <label for="parking_available">Parking Available</label>
 
-        <input type="checkbox" name="availability_status"><br>
-        <label for="availability_status">Availability Status</label>
+            <input type="checkbox" name="availability_status"><br>
+            <label for="availability_status">Availability Status</label>
 
-        <input type="submit" name="add" value="Add Facility">
-    </form>
-</div>
+            <input type="submit" name="add" value="Add Facility">
+        </form>
+    </div>
     <!-- List of Facilities -->
     <h1>Outlets List</h1>
     <table>
@@ -102,5 +102,36 @@ $result = mysqli_query($conn, $sql);
         }
         ?>
     </table>
+
+    <script>s
+        function validateForm() {
+            var facilityName = document.getElementById('facility_name').value;
+            var seatingCapacity = document.getElementById('seating_capacity').value;
+            var parkingAvailable = document.getElementById('parking_available').checked;
+            var availabilityStatus = document.getElementById('availability_status').checked;
+
+            // Validate facility name (you can add more specific validation if needed)
+            if (facilityName.trim() === "") {
+                alert("Please enter Outlet Location");
+                return false;
+            }
+
+            // Validate seating capacity (assuming it should be a positive number)
+            if (isNaN(seatingCapacity) || seatingCapacity <= 0) {
+                alert("Please enter a valid positive number for Seating Capacity");
+                return false;
+            }
+
+            // Validate at least one checkbox is checked
+            if (!parkingAvailable && !availabilityStatus) {
+                alert("Please check at least one of the checkboxes (Parking Available or Availability Status)");
+                return false;
+            }
+
+            // You can add more validation for other fields if needed
+
+            return true; // If all validations pass, the form will be submitted
+        }
+    </script>
 </body>
 </html>
