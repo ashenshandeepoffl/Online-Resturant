@@ -69,7 +69,7 @@
         <label for="item_price">Price</label>
 
 
-        <input type="file" name="item_image" accept="image/*" required class="btnImg"  ><br>
+        <input type="file" name="item_image" accept="image/*" class="btnImg"  ><br>
         <label for="item_image">Upload a Image</label>
 
         <input type="text" name="item_small_desc" step="0.01" value="<?php echo $row['small_description']; ?>" required>
@@ -82,14 +82,41 @@
         <label for="item_categories">Categories</label>
 
         <input type="submit" value="Update Item" class="btnImg" > <br>
-        <form action="deleteItem.php" method="post">
-            <input type="hidden" name="menu_code" value="<?php echo $row['menu_code']; ?>">
-            <input type="submit" value="Delete Item" class="btnImg">
-        </form>
+        <input type="hidden" id="menuCode" value="<?php echo $row['menu_code']; ?>">
+        <button onclick="deleteItem()" class="btnImgDelete">Delete Item</button>
     </form>
+    
 </div>
 
     <script>
+        function deleteItem() {
+            var menuCode = document.getElementById('menuCode').value;
+
+            // Use fetch to send an AJAX request to deleteItem.php
+            fetch('deleteItem.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'menu_code=' + encodeURIComponent(menuCode),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Handle the response data if needed
+                console.log(data);
+                // Redirect to menu.php after successful deletion
+                window.location.href = 'menu.php';
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+
         function validateForm() {
             var itemName = document.forms["updateForm"]["item_name"].value;
             var itemPrice = document.forms["updateForm"]["item_price"].value;

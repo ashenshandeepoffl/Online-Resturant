@@ -43,7 +43,7 @@
             </select>
 
             <label for="categoryFilter">Category</label>
-
+    
             <select id="categoryFilter" onchange="liveSearch()">
                 <option value="">All</option>
                 <option value="Appetizer">Appetizer</option>

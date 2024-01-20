@@ -65,12 +65,13 @@ $admin_orders_result = $conn->query($admin_orders_query);
             }
 
             // Add a button for the admin to approve the order
-            echo "<form action='approveOrder.php' method='post'>
+            echo " 
+            <div class='menueDeatilsForm'> 
+                <form action='approveOrder.php' method='post'>
                     <input type='hidden' name='order_id' value='$order_id'>
-                    <input type='submit' value='Approve Order'>
-                  </form>";
-
-            echo "<hr>"; // Separate each order
+                    <input type='submit' class='btnImg' value='Approve Order'>
+                </form>
+            </div>";
         }
     } else {
         echo "No pending orders.";
