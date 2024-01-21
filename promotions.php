@@ -17,33 +17,34 @@
     </div>
 
     <h2 class="topics">Promotions</h2>
+    <div class='card-container'>
+        <?php
+        include 'dbConnection.php';
 
-    <?php
-    include 'dbConnection.php';
+        // Query to get all promotions
+        $all_promotions_query = "SELECT * FROM promotions";
+        $result = $conn->query($all_promotions_query);
 
-    // Query to get all promotions
-    $all_promotions_query = "SELECT * FROM promotions";
-    $result = $conn->query($all_promotions_query);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-
-            echo '<div class="card">';
-                echo "<img src='/Restaurant/Admin/{$row['image_url']}' alt='Promotion Image' style='width:100%'>";
-                echo '<div class="container">';
-                    echo "<h3>{$row['promotion_name']}</h3>";
-                    echo "<p>Old Price:</p>" . "<p class='oldPrice'>$ {$row['old_price']}</p>";
-                    echo "<p>Promotional Price: <b> $ {$row['new_price']} <b></p>";
-                    echo '<div class="buttons">';
-                        echo "<a href='signup.php'><button class='add'>Place an Order</button></a>";
-                    echo '</div>';
+                echo '<div class="card">';
+                    echo "<img src='/Restaurant/Admin/{$row['image_url']}' alt='Promotion Image' style='width:100%'>";
+                    echo '<div class="container">';
+                        echo "<h3>{$row['promotion_name']}</h3>";
+                        echo "<p>Old Price</p>" . "<p class='oldPrice'>$ {$row['old_price']}</p>";
+                        echo "<p>Promotional Price <b> $ {$row['new_price']} <b></p>";
+                        echo '<div class="buttons">';
+                            echo "<a href='signup.php'><button class='add'>Place an Order</button></a>";
+                        echo '</div>';
+                    echo "</div>";
                 echo "</div>";
-            echo "</div>";
 
+            }
+        } else {
+            echo "<p>No promotions found.</p>";
         }
-    } else {
-        echo "<p>No promotions found.</p>";
-    }
-    ?> 
+        ?> 
+    </div>
 </body>
 </html>

@@ -1,14 +1,18 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Baloo+2:wght@400,500&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Delius+Unicase:wght@400,700&family=Pacifico&family=Yellowtail&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Delius+Unicase:wght@400;700&family=Pacifico&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-* {
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     display: grid;
-    font-family: 'Comfortaa', sans-serif;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fbfbfb;
 }
 
 .topnav {

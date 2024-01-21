@@ -50,17 +50,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+// Process form data when submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
+    $email = $_POST["email"];
+    $username = $_POST["username"];
+    $address = $_POST["address_no"] . ', ' . $_POST["address_street"] . ', ' . $_POST["address_city"];
+    $gender = $_POST["gender"];
+    $dob = $_POST["dob"];
+    $password = $_POST["password"];
+    $confirm_password = $_POST["confirm_password"];
+
+    // Validate password match
+    if ($password != $confirm_password) {
+        die("Password and Confirm Password do not match");
+    }
+
+    // Hash the password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Set default user role
+    $user_type = "customers";
+
+    // SQL query to insert data into the database
+    $sql = "INSERT INTO users (first_name, last_name, email, username, address, gender, dob, password, user_type)
+            VALUES ('$first_name', '$last_name', '$email', '$username', '$address', '$gender', '$dob', '$hashed_password', '$user_type')";
+
+    if ($conn->query($sql) === TRUE) {
+        // Registration successful, redirect to login page
+        header("Location: login.php");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
 $conn->close();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <script src="validation.js"></script>
-    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
 </head>
 <body>
 
@@ -73,23 +110,56 @@ $conn->close();
         <a class="active" href="login.php">Login</a>
     </div>
 
-    <h2>Login</h2>
-
-    <div class="reservationForm"> 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-            <input type="text" name="username"><br>
-            <label for="username">Username</label>
-
-            <input type="password" name="password" autocomplete="off"><br>
-            <label for="password">Password</label>
-
-            <input type="submit" value="Login">
-            <br> <br>
-            <p>Don't have an account? <a href="signup.php"><b>Sign in now</b></a></p>
-        </form>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form name ="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return validateForm()">
+                <h1>Create Account</h1>
+                <!-- <span>Add your person details with us</span> -->
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="address_no" placeholder="Address Number" > 
+                <input type="text" name="address_street" placeholder="Address Street" >
+                <input type="text" name="address_city" placeholder="Address City" > 
+                <select name="gender" >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <input type="date" name="dob" placeholder="Date of Birth">
+                <input type="password" name="password" placeholder="Password" > 
+                <input type="password" name="confirm_password" placeholder="Confirm Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <h1>Sign In</h1>
+                <span>Use your username & password</span>
+                <input type="text" name="username">
+                <input type="password" name="password" autocomplete="off">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
     </div>
-
+    <script src="script.js"></script>
 </body>
-</html>
+</html
+
+
 
