@@ -1,28 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
 }
 
-body {
-    display: grid;
+body{
+    background-color: #fbfbfb;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #fbfbfb;
 }
 
+
 .topnav {
+    margin: 10px;
     overflow: hidden;
     background-color: #EDF6F9;
+    border-radius: 10px;  
+    margin-bottom: 30px;
 }
 
 .topnav a {
     float: left;
-    color: #006D77;
+    color: #019b98;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -138,9 +142,3 @@ body {
         margin:0% 3%;
     }
 }
-
-.words {
-    text-align: center;
-    padding: 10px;
-}
-  

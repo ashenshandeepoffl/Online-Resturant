@@ -110,53 +110,60 @@ $conn->close();
         <a class="active" href="login.php">Login</a>
     </div>
 
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form name ="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return validateForm()">
-                <h1>Create Account</h1>
-                <!-- <span>Add your person details with us</span> -->
-                <input type="text" name="first_name" placeholder="First Name">
-                <input type="text" name="last_name" placeholder="Last Name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="text" name="username" placeholder="Username">
-                <input type="text" name="address_no" placeholder="Address Number" > 
-                <input type="text" name="address_street" placeholder="Address Street" >
-                <input type="text" name="address_city" placeholder="Address City" > 
-                <select name="gender" >
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <input type="date" name="dob" placeholder="Date of Birth">
-                <input type="password" name="password" placeholder="Password" > 
-                <input type="password" name="confirm_password" placeholder="Confirm Password">
-                <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <h1>Sign In</h1>
-                <span>Use your username & password</span>
-                <input type="text" name="username">
-                <input type="password" name="password" autocomplete="off">
-                <a href="#">Forget Your Password?</a>
-                <button>Sign In</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-                    <button class="hidden" id="login">Sign In</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Register with your personal details to use all of site features</p>
-                    <button class="hidden" id="register">Sign Up</button>
+    <div class="body2">
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form name ="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return validateForm()">
+                    <h1>Create Account</h1>
+                    <!-- <span>Add your person details with us</span> -->
+                    <input type="text" name="first_name" placeholder="First Name">
+                    <input type="text" name="last_name" placeholder="Last Name">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="address_no" placeholder="Address Number" > 
+                    <input type="text" name="address_street" placeholder="Address Street" >
+                    <input type="text" name="address_city" placeholder="Address City" > 
+                    <select name="gender" >
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <input type="date" name="dob" placeholder="Date of Birth">
+                    <input type="password" name="password" placeholder="Password" > 
+                    <input type="password" name="confirm_password" placeholder="Confirm Password">
+                    <button>Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <h1>Sign In</h1>
+                    <span>Use your username & password</span>
+                    <input type="text" name="username">
+                    <input type="password" name="password" autocomplete="off">
+                    <a href="#">Forget Your Password?</a>
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back!</h1>
+                        <p>Enter your personal details to use all of site features</p>
+                        <button class="hidden" id="login">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Register with your personal details to use all of site features</p>
+                        <button class="hidden" id="register">Sign Up</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        <h1>Hello</h1>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html

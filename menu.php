@@ -26,28 +26,33 @@ $menu_result = $conn->query($menu_query);
 
     <h2>Menu</h2>
     <div class='card-container'>
-        <?php
-            if ($menu_result->num_rows > 0) {
-                while ($menu_row = $menu_result->fetch_assoc()) {
-                    // Assuming that $menu_row['image_url'] contains the image filename
-                    $imagePath = "Admin/uploads/" . $menu_row['image_url'];
-            
-                    echo '<div class="card">';
-                        echo "<img src='/Restaurant/Admin/{$menu_row['image_url']}' alt='{$menu_row['name']}' style='width:100%'><br>";
-                        echo '<div class="container">';
-                            echo "<h3>{$menu_row['name']}</h3>";
-                            echo "<p>$ {$menu_row['price']}</p>";
-                            echo "<p>{$menu_row['small_description']}</p>";
-                            echo '<div class="buttons">';
-                                echo "<a href='menuDetails.php?menu_code={$menu_row['menu_code']}'><button class='add'>More Details</button></a><br>";
-                            echo '</div>';
-                        echo "</div>";
-                    echo "</div>";
-                }
-            } else {
-                echo "No menu items available.";
-            }
-        ?>
-    </div>
+    <?php
+    if ($menu_result->num_rows > 0) {
+        while ($menu_row = $menu_result->fetch_assoc()) {
+            $imagePath = "Admin/uploads/" . $menu_row['image_url'];
+            ?>
+            <div class="card">
+                <div class="card-image">
+                    <img src='/Restaurant/Admin/<?php echo $menu_row['image_url']; ?>' alt='<?php echo $menu_row['name']; ?>' style='width:100%'>
+                </div>
+                <div class="card-content">
+                    <h3><?php echo $menu_row['name']; ?></h3>
+                    <p>$ <?php echo $menu_row['price']; ?></p>
+                    <p><?php echo $menu_row['small_description']; ?></p>
+                    <div class="buttons">
+                        <a href='menuDetails.php?menu_code=<?php echo $menu_row['menu_code']; ?>'>
+                            <button class='add'>More Details</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+    } else {
+        echo "No menu items available.";
+    }
+    ?>
+</div>
+
 </body>
 </html>

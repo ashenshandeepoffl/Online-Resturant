@@ -23,23 +23,22 @@
        include 'welcomeName.php';
     ?>
 
-     <!-- Search Bar -->
-
+    <!-- Search Bar -->
     <div class="cover">
         <h1>Discover your favourite food</h1>
         <form  class="flex-form">
             <input type="search" id="searchInput" onkeyup="liveSearch()" placeholder="Search for your favourite food...">
-            <input type="submit" value="Search">
+            <!-- <input type="submit" value="Search"> -->
         </form>
 
         <div class="filter">
             <label for="priceFilter">Price</label>
 
             <select id="priceFilter" onchange="liveSearch()">
-                <option value="">All</option>
-                <option value="10">$10 and below</option>
-                <option value="20">$20 and below</option>
-                <option value="30">$30 and below</option>
+                <option value="100000000">All</option>
+                <option value="500 ">Rs500 and below</option>
+                <option value="1000">Rs1000 and below</option>
+                <option value="2000">Rs200 and below</option>
             </select>
 
             <label for="categoryFilter">Category</label>
@@ -53,7 +52,7 @@
         </div>
     </div>
 
-    <div  class="filteredMenu"  id="filteredMenuContainer"></div>
+    <div class="filteredMenu"  id="filteredMenuContainer"></div>
 
     <div class="hero-image">
         <div class="hero-text">
@@ -68,34 +67,38 @@
     <h3>Menu</h3>
     <div class='card-container'>
         <?php
-            include 'dbConnection.php';
+        include 'dbConnection.php';
 
-            $menu_query = "SELECT * FROM menu_items";
-            $menu_result = $conn->query($menu_query);
+        $menu_query = "SELECT * FROM menu_items";
+        $menu_result = $conn->query($menu_query);
 
-            if ($menu_result->num_rows > 0) {
-                while ($menu_row = $menu_result->fetch_assoc()) {
-                    // Assuming that $menu_row['image_url'] contains the image filename
-                    $imagePath = "Admin/uploads/" . $menu_row['image_url'];
-            
-                    echo '<div class="card">';
-                        echo "<img src='/Restaurant/Admin/{$menu_row['image_url']}' alt='{$menu_row['name']}' style='width:100%'><br>";
-                        echo '<div class="container">';
-                            echo "<h3>{$menu_row['name']}</h3>";
-                            echo "<p>$ {$menu_row['price']}</p>";
-                            echo "<p>{$menu_row['small_description']}</p>";
-                            echo '<div class="buttons">';
-                                echo "<a href='menuDetails.php?menu_code={$menu_row['menu_code']}'><button class='add'>More Details</button></a><br>";
-                            echo '</div>';
-                        echo "</div>";
-                    echo "</div>";
-                }
-            } else {
-                echo "No menu items available.";
+        if ($menu_result->num_rows > 0) {
+            while ($menu_row = $menu_result->fetch_assoc()) {
+                $imagePath = "Admin/uploads/" . $menu_row['image_url'];
+                ?>
+                <div class="card">
+                    <div class="card-image">
+                        <img src='/Restaurant/Admin/<?php echo $menu_row['image_url']; ?>' alt='<?php echo $menu_row['name']; ?>' style='width:100%'>
+                    </div>
+                    <div class="card-content">
+                        <h3><?php echo $menu_row['name']; ?></h3>
+                        <p>$ <?php echo $menu_row['price']; ?></p>
+                        <p><?php echo $menu_row['small_description']; ?></p>
+                        <div class="buttons">
+                            <a href='menuDetails.php?menu_code=<?php echo $menu_row['menu_code']; ?>'>
+                                <button class='add'>More Details</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php
             }
+        } else {
+            echo "No menu items available.";
+        }
         ?>
     </div>
-<hr>
+
     
 </body>
 </html>
