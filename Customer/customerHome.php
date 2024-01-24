@@ -15,7 +15,7 @@
         <a href="foodCart.php">Food Cart</a>
         <a href="onlineReservation.php">Online Reservation</a>
         <a href="aboutus.html">About</a>
-        <a href="/Restaurant/gallery.html">Gallery</a>
+        <a href="gallery.html">Gallery</a>
         <a href="/Restaurant/logout.php">Logout</a>
     </div>
 
@@ -25,7 +25,7 @@
 
     <!-- Search Bar -->
     <div class="cover">
-        <h1>Discover your favourite food</h1>
+        <h1>Discover your favourite food...</h1>
         <form  class="flex-form">
             <input type="search" id="searchInput" onkeyup="liveSearch()" placeholder="Search for your favourite food...">
             <!-- <input type="submit" value="Search"> -->
@@ -38,7 +38,7 @@
                 <option value="100000000">All</option>
                 <option value="500 ">Rs500 and below</option>
                 <option value="1000">Rs1000 and below</option>
-                <option value="2000">Rs200 and below</option>
+                <option value="2000">Rs2000 and below</option>
             </select>
 
             <label for="categoryFilter">Category</label>
@@ -52,12 +52,13 @@
         </div>
     </div>
 
+    <h3> FIltered Items</h3>
     <div class="filteredMenu"  id="filteredMenuContainer"></div>
 
     <div class="hero-image">
         <div class="hero-text">
             <h1>The Outer Clove restaurant</h1>
-            <p class="hero-textP">Quality Food from a Quality Kitchen</p>
+            <p>Quality Food from a Quality Kitchen</p>
         </div>
     </div>
 

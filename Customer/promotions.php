@@ -33,20 +33,24 @@ $result = $conn->query($all_promotions_query);
     <div class='card-container'>
     <?php
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="card">';
-                    echo "<img src='/Restaurant/Admin/{$row['image_url']}' alt='Promotion Image' style='width:100%'>";
-                    echo '<div class="container">';
-                        echo "<h3>{$row['promotion_name']}</h3>";
-                        echo "<p>Old Price</p>" . "<p class='oldPrice'>$ {$row['old_price']}</p>";
-                        echo "<p>Promotional Price <b> $ {$row['new_price']} <b></p>";
-                    echo "</div>";
-                echo "</div>";
+            while ($row = $result->fetch_assoc())  {
+                ?>
+                <div class="card">
+                    <div class="card-image">
+                        <img src='/Restaurant/Admin/<?php echo $row['image_url']; ?>' alt='Promotion Image' style='width:100%'>
+                    </div>
+                    <div class="card-content">
+                        <h3><?php echo $row['promotion_name']; ?></h3>
+                        <p>Old Price</p><p class='oldPrice'>$ <?php echo $row['old_price']; ?></p>
+                        <p>Promotional Price <b>$ <?php echo $row['new_price']; ?></b></p>
+                    </div>
+                </div>
+                <?php
             }
         } else {
             echo "<p>No promotions found.</p>";
         }
-    ?>
+        ?>
     </div>
     <!-- Place Online Order Form -->
     <h3>Place Online Order</h3>

@@ -41,11 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo '<script language="javascript">';
             echo 'alert("Invalid password")';
+            header("Location: invalid.html");
             echo '</script>';
+
         }
     } else {
         echo '<script language="javascript">';
         echo 'alert("User not found")';
+        header("Location: invalid.html");
         echo '</script>';
     }
 }

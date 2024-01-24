@@ -41,13 +41,67 @@ body {
 .cover  {
     height: 100vh;
     width: 100%;
-    padding: 20px 50px;
     display: -webkit-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* Set the background image */
+    background-image: url('../Images/backgroundSearch.jpg'); 
+
+    /* Set background size and position */
+    background-size: cover;
+    background-position: center center;
+
+    /* Set background attachment and repeat */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    /* Add a 50% black overlay */
+    position: relative;
+    border-radius: 10px;
 }
+
+.cover h1{
+    color: white;
+}
+
+
+.filter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter label {
+    margin-right: 10px;
+    color: white;
+    font-weight: bolder;
+}
+
+.filter select {
+    color: black;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the options for select */
+.filter select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Style the selected option */
+.filter select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
 
 .flex-form input[type="submit"] {
     background: #006D77;
@@ -138,9 +192,14 @@ p {
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.8em;
     color: #4E4E4E;
-    margin-top: -5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
 }
 
 img {
@@ -174,16 +233,6 @@ button :hover {
 .oldPrice {
     text-decoration: line-through;
 }
-
-
-.add {
-    width: 100%;
-}
-
-.oldPrice {
-    text-decoration: line-through;
-}
-
 
 .add {
     width: 100%;
@@ -358,13 +407,25 @@ th {
 }
 
 .hero-image {
-    margin-top: 10px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-    url("/Restaurant/Images/background.jpg");
     height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Set the background image */
+    background-image: url('../Images/background.jpg'); 
+
+    /* Set background size and position */
     background-size: cover;
+    background-position: center center;
+
+    /* Set background attachment and repeat */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    /* Add a 50% black overlay */
     position: relative;
     border-radius: 10px;
 }
@@ -380,6 +441,11 @@ th {
 
 .hero-text h1 {
     font-size: 75px;
+}
+
+.hero-text p {
+    color: #fff;
+    font-weight: bolder;
 }
 
 .words {
