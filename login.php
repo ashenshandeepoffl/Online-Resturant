@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo '<script language="javascript">';
         echo 'alert("User not found")';
-        header("Location: invalid.html");
+        header("Location: userNotFound.html");
         echo '</script>';
     }
 }

@@ -43,9 +43,8 @@
     <h1>All Users</h1>
 
     <!-- Search Box -->
-    <form action="" method="post">
-        <label for="search">Search by Username or Email</label>
-        <input type="text" name="search" id="search" placeholder="Enter username or email">
+    <form action="" method="post" id="searchForm">
+        <input type="text" name="search" id="searchInput" placeholder="Enter username or email">
         <input type="submit" value="Search">
     </form>
 
@@ -70,7 +69,6 @@
             $result = $conn->query($all_users_query);
 
             if ($result->num_rows > 0) {
-                echo "<h3>All Users</h3>";
                 displayUsersTable($result);}
         }
     } else {
