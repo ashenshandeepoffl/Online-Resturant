@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+footer {
+    background: #f0f0f0;
+    padding: 30px 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+    display: flex;
+    gap: 20px; /* Adjust the spacing between icons as needed */
+    justify-content: center;
+}
+
+.row.social-icons .icon {
+    display: inline-block;
+    font-size: 2em;
+    color: #555;
+    transition: color 0.5s;
+}
+
+.row.social-icons .icon:hover {
+    color: #019b98;
+}
+
+.footer .row ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.5s;
+}
+
+.footer .row a:hover {
+    color: #019b98;
+}
+
+.copyright {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+@media (max-width: 720px) {
+    .footer {
+        text-align: left;
+        padding: 5%;
+    }
+
+    .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    .row.social-icons,
+    .row.footer-links {
+        flex-direction: column;
+    }
+
+    .footer .row a {
+        display: block;
+    }
+}
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer">
+            <div class="row social-icons">
+                <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="icon"><i class="fa fa-youtube"></i></a>
+                <a href="#" class="icon"><i class="fa fa-twitter"></i></a>
+            </div>
+            
+            <div class="row footer-links">
+                <ul>
+                    <li><a href="aboutus.html">Contact us</a></li>
+                    <li><a href="home.php">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 The Outer Clove Restaurant - All rights reserved  
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

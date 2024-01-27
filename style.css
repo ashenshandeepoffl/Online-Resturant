@@ -233,3 +233,84 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+
+footer {
+    background: #f0f0f0;
+    padding: 30px 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+    display: flex;
+    gap: 20px; /* Adjust the spacing between icons as needed */
+    justify-content: center;
+}
+
+.row.social-icons .icon {
+    display: inline-block;
+    font-size: 2em;
+    color: #555;
+    transition: color 0.5s;
+}
+
+.row.social-icons .icon:hover {
+    color: #019b98;
+}
+
+/* Footer */
+
+.footer .row ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.5s;
+}
+
+.footer .row a:hover {
+    color: #019b98;
+}
+
+.copyright {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+@media (max-width: 720px) {
+    .footer {
+        text-align: left;
+        padding: 5%;
+    }
+
+    .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    .row.social-icons,
+    .row.footer-links {
+        flex-direction: column;
+    }
+
+    .footer .row a {
+        display: block;
+    }
+}

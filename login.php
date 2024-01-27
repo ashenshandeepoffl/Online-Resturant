@@ -164,7 +164,28 @@ $conn->close();
     </div>
 
     <footer>
-        <h1>Hello</h1>
+        <div class="footer">
+            <div class="row social-icons">
+                <a href="#" class="icon"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="icon"><i class="fa fa-instagram"></i></a>
+                <a href="#" class="icon"><i class="fa fa-youtube"></i></a>
+                <a href="#" class="icon"><i class="fa fa-twitter"></i></a>
+            </div>
+            
+            <div class="row footer-links">
+                <ul>
+                    <li><a href="aboutus.html">Contact us</a></li>
+                    <li><a href="home.php">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 The Outer Clove Restaurant - All rights reserved  
+            </div>
+        </div>
     </footer>
     
     <script src="script.js"></script>
