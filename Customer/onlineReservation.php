@@ -42,10 +42,10 @@
             <input type="email" name="email_address" required><br>
             <label for="email_address">Email Address</label>
 
-            <input type="number" name="adults" required><br>
+            <input type="number" name="adults" required min="0"><br>
             <label for="adults">Number of Adults</label>
 
-            <input type="number" name="children" required><br>
+            <input type="number" name="children" required min="0"><br>
             <label for="children">Number of Children</label>
 
             <input type="date" name="reservation_date" required><br>

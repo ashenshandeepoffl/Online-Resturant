@@ -37,7 +37,7 @@
                         <p>Old Price</p><p class='oldPrice'>$ <?php echo $row['old_price']; ?></p>
                         <p>Promotional Price <b>$ <?php echo $row['new_price']; ?></b></p>
                         <div class="buttons">
-                            <a href='signup.php'><button class='add'>Place an Order</button></a>
+                            <a href='login.php'><button class='add'>Place an Order</button></a>
                         </div>
                     </div>
                 </div>
