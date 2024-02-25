@@ -20,7 +20,7 @@
 
     <div class="hero-image">
         <div class="hero-text">
-            <h1>The Outer Clove Restaurant Admin Panel</h1>
+            <h1>The Outer Clove Restaurant ShowOwners Panel</h1>
             <p>Quality Food from a quality kitchen</p>
             <p>Scroll Down ↡</p>
         </div>
@@ -58,15 +58,6 @@
     <div>
         <div class="dashbordCard">
             <div class="wrap">
-                <span class="dashbordCardCount">Users</span>
-                <h1 class="dashbordCardTitle"><a href="view_users.php">Click Here</a></h1>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="dashbordCard">
-            <div class="wrap">
                 <span class="dashbordCardCount">Outlets</span>
                 <h1 class="dashbordCardTitle"><a href="facilities.php">Click Here</a></h1>
             </div>
@@ -85,7 +76,7 @@
     <div>
         <div class="dashbordCard">
             <div class="wrap">
-                <span class="dashbordCardCount">New Admins</span>
+                <span class="dashbordCardCount">New ShowOwners</span>
                 <h1 class="dashbordCardTitle"><a href="signup.php">Click Here</a></h1>
             </div>
         </div>

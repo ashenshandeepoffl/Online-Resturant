@@ -32,7 +32,7 @@ if (isset($_GET['menu_code'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Details</title>
-    <link rel="stylesheet" href="menuDetails.scss">
+    <link rel="stylesheet" href="menuDetails.css">
 </head>
 <body>
     <div class="card">
@@ -79,7 +79,7 @@ if (isset($_GET['menu_code'])) {
     </div>
     <div class="card__footer">
         <div class="action">
-        <button type="button"><a href="signup.php">Add to the cart</a></button>
+        <button type="button"><a href="login.php">Add to the cart</a></button>
         </div>
     </div>
     </div>

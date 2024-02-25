@@ -90,14 +90,11 @@ if (isset($_GET['menu_code'])) {
                 <label for="quantity">Quantity</label>
                 <input type="number" name="quantity" value="1" min="1" required><br> <br>
                 <div class="action">
-                    <button type="button">Add to the cart</button>
+                    <button type="submit">Add to the cart</button>
                 </div>
             </form>
             
         </div>
     </div>
-
-    
-
 </body>
 </html>

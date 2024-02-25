@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: Customer/customerHome.php");
                     break;
                 case "shopOwner":
-                    header("Location: Owner/ownerHome.php");
+                    header("Location: ShopOwners/shopOwnersHome.php");
                     break;
                 default:
                     // Handle other user types or roles
