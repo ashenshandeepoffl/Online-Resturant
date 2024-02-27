@@ -39,14 +39,15 @@
                 <option value="500 ">Rs500 and below</option>
                 <option value="1000">Rs1000 and below</option>
                 <option value="2000">Rs2000 and below</option>
+                \<option value="3000">Rs3000 and below</option>
             </select>
 
             <label for="categoryFilter">Category</label>
     
             <select id="categoryFilter" onchange="liveSearch()">
                 <option value="">All</option>
-                <option value="Appetizer">Appetizer</option>
-                <option value="Main Course">Main Course</option>
+                <option value="Appetizer">Main</option>
+                <option value="Main Course">Salad</option>
                 <option value="Dessert">Dessert</option>
             </select>
         </div>
