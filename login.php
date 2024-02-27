@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Registration successful, redirect to login page
-        header("Location: login.php");
+        header("Location: successful.html");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

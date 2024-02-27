@@ -31,7 +31,7 @@ if (isset($_GET['menu_code'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Details</title>
-    <link rel="stylesheet" href="menuDetails.scss">
+    <link rel="stylesheet" href="menuDetails.css">
 </head>
 <body>
     <div class="card">

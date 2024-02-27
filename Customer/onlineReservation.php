@@ -19,8 +19,8 @@
     <?php
         include 'welcomeName.php';
         include 'dbConnection.php';
-
-        // Retrieve all reservations from the database
+        
+        $username = $_SESSION['username'];
         $sql = "SELECT * FROM reservations";
         $result = $conn->query($sql);
     ?>
